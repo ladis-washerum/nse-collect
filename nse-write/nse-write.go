@@ -8,8 +8,8 @@ import (
 	"os"
 )
 
-const OUT = "/var/spool/nagios/events-bt/events.out"
-const LOG = "/var/log/nagios/events-bt/writer.log"
+const OUT = "/var/spool/nagios/events/events.out"
+const LOG = "/var/log/nagios/events/writer.log"
 
 type JsonEvent struct {
 	Perimeter string
