@@ -15,12 +15,6 @@ import (
 	"strings"
 )
 
-/*
-const SFTP_ADDR = "10.1.151.60"
-const SFTP_USER = "sftpbot"
-const SFTP_PATH = "sftpbot"
-const SFTP_RSAKEY = "/home/geoffrey.mathy/id_sftpbot.rsa"
-*/
 const BufferSize = 1024
 
 /**
@@ -127,12 +121,6 @@ func (c *SftpClient) ListFiles() ([]string, error) {
 func (c *SftpClient) GetFiles(fileList []string) ([]string, error) {
 	var localFiles []string
 	for _, filename := range fileList {
-		//if strings.HasSuffix(filename, ".tgz") {
-		//re := regexp.MustCompile(`.tgz$`)
-		//filenameShort := string(re.ReplaceAll([]byte(filename), []byte{}))
-
-		//fmt.Printf("-- Retrieve file %v\n", filename)
-
 		//- Retrieve files
 		sftpFile, err := (*c.client).Open(filepath.Join((*c).remotePath, filename))
 		if err != nil {
@@ -147,7 +135,6 @@ func (c *SftpClient) GetFiles(fileList []string) ([]string, error) {
 		fileSize := fileStat.Size()
 
 		//- Reading from sftpFile
-		//fmt.Printf("   reading %vB from %v\n", fileSize, filename)
 		var fileContent = make([]byte, fileSize)
 		sftpFile.Read(fileContent)
 
