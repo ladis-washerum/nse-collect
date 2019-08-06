@@ -14,18 +14,10 @@ import (
 	"time"
 )
 
-//const SFTP_ADDR = "10.1.151.60"
-//const SFTP_PORT = "22"
-const SFTP_ADDR = "10.5.8.19"
-const SFTP_PORT = 5222
-const SFTP_USER = "sftpbot"
-const SFTP_PATH = "sftpbot"
-const SFTP_RSAKEY = "/home/geoffrey.mathy/id_sftpbot.rsa"
-
 const CFGPATH = "/etc/nse-collect.conf"
-const EVDIR = "/var/spool/nagios/events-bt"
-const EVPATH = "/var/spool/nagios/events-bt/events.out"
-const LOG = "/var/log/nagios/events-bt/transfert.log"
+const EVDIR = "/var/spool/nagios/events"
+const EVPATH = "/var/spool/nagios/events/events.out"
+const LOG = "/var/log/nagios/events/transfert.log"
 
 /*
  * Parse config file
