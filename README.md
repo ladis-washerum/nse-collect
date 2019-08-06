@@ -10,13 +10,13 @@ NSE-Collect provides two components : write & transfer
 
 ## nse-write
 Must be called by Nagios event handler. It retrieves and format its parameters and finally writes them into a JSON file.
-* Spool file : /var/spool/nagios/events-bt/events.out
-* Log file : /var/log/nagios/events-bt/writer.log
+* Spool file : /var/spool/nagios/events/events.out
+* Log file : /var/log/nagios/events/writer.log
 
 ## nse-transfer
 Must be called periodically by a cron task. It compresses JSON data to Gzip file and transfers them on an SFTP server. If the transfer failed, it will be retried the next time. 
-* Spool file to compress : /var/spool/nagios/events-bt/events.out (same than nse-writer)
-* Log file : /var/log/nagios/events-bt/transfert.log
+* Spool file to compress : /var/spool/nagios/events/events.out (same than nse-writer)
+* Log file : /var/log/nagios/events/transfert.log
 
 ## Installation
 You have to : 
